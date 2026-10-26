@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a9436f6da2544d9ae472a3707f979d, type: 3}
+  m_Name: Lovo
+  m_EditorClassIdentifier: 
+  m_PokemonName: Lovo
+  m_Description: 
+  m_Model: {fileID: 2629182449500102118, guid: 15ca4494f24bf9741a48b37ec2c4c632, type: 3}
+  m_Sprite: {fileID: 0}
+  m_Health: 80
+  m_Attack: 75
+  m_Defense: 50
+  m_SpAttack: 70
+  m_SpDefense: 50
+  m_Speed: 60
+  m_Moves:
+  - {fileID: 11400000, guid: 21555efdc7b014d2ba763f57613c0424, type: 2}
+  - {fileID: 11400000, guid: 1225fd72fc5b240d58f551486119c811, type: 2}
+  m_MainType: 5
+  m_SecondaryType: 1
+  m_EvolutionLevel: 15
+  m_Evolution: {fileID: 0}

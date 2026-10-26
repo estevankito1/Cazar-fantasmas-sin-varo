@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cd4e7844cb7403a824d121534839a2, type: 3}
+  m_Name: Water Pulse
+  m_EditorClassIdentifier: 
+  m_MoveName: Chorro de Agua
+  m_MoveDescription: 
+  m_Power: 35
+  m_Accuracy: 70
+  m_PowerPoints: 15
+  m_IsSpecial: 1
+  m_MoveType: 1
+  m_AnimationName: 
+  m_Icon: {fileID: 0}
+  m_SoundEffect: {fileID: 0}
+  m_VisualEffect: {fileID: 0}
