@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("Enemy Settings")]
     public float speed = 3f;
 
     private Transform player;
+    private MiniGameManager gameManager;
+
+    private bool hasAttacked = false;
 
     void Start()
     {
@@ -16,11 +20,16 @@ public class EnemyAI : MonoBehaviour
         {
             player = playerObject.transform;
         }
+
+        gameManager =
+            FindFirstObjectByType<MiniGameManager>();
     }
 
     void Update()
     {
         if (player == null) return;
+        if (gameManager == null) return;
+        if (gameManager.gameOver) return;
 
         Vector3 target = player.position;
         target.y = transform.position.y;
@@ -31,4 +40,25 @@ public class EnemyAI : MonoBehaviour
             speed * Time.deltaTime
         );
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (hasAttacked) return;
+
+        if (other.CompareTag("Player"))
+        {
+            hasAttacked = true;
+
+            if (gameManager != null &&
+                !gameManager.gameOver)
+            {
+                gameManager.TakeDamage();
+            }
+
+            Destroy(gameObject);
+        }
+    }
 }
+
+
+
