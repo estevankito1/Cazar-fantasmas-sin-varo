@@ -1355,6 +1355,11 @@ CapsuleCollider:
   m_Height: 1.6678021
   m_Direction: 1
   m_Center: {x: 0, y: 0.75236, z: -0.12030715}
+--- !u!4 &31906390 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7019920669011962644, guid: cc91c8ba8b9a34f4d99e70d721f60b64, type: 3}
+  m_PrefabInstance: {fileID: 295304258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &33044497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7524,6 +7529,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7649,6 +7655,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d37ca73aa1ad4244af03c367f6edffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsometricCamera
+  target: {fileID: 31906390}
+  distance: 20
+  smoothTime: 0.15
+  angles: {x: 35.264, y: 45, z: 0}
 --- !u!1 &331581890
 GameObject:
   m_ObjectHideFlags: 0

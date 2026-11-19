@@ -9,19 +9,9 @@ public class Player : StateMachine
     public LayerMask groundLayer;
     public PokemonDefinition Pokemon;
 
+    private Transform m_Cam;
+
     private InputSystem_Actions m_InputActions;
-
-    public bool isGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
-    }
-
-    public Vector3 MoveDirection()
-    {
-        Vector3 MoveDirVector = new Vector3(m_InputActions.Player.Move.ReadValue<Vector2>().x, 0f,
-            m_InputActions.Player.Move.ReadValue<Vector2>().y);
-        return MoveDirVector;
-    }
 
     void Start()
     {
@@ -30,34 +20,37 @@ public class Player : StateMachine
 
         rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        m_Cam = Camera.main.transform;
 
         m_CurrentState = new PlayerIdle(this);
     }
 
+    public bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
+    }
+
+    public Vector3 MoveDirection()
+    {
+        Vector2 input = m_InputActions.Player.Move.ReadValue<Vector2>();
+        Vector3 dir = new Vector3(input.x, 0f, input.y);
+        return Quaternion.Euler(0f, m_Cam.eulerAngles.y, 0f) * dir;
+    }
 
     public void Rotate(float p_RotationSpeed)
     {
-        float rotation = MoveDirection().x;
-        animator.InterpolateFloat("Turn", rotation * 90, p_RotationSpeed);
-        if (rotation == 0f)
-        {
-            return;
-        }
+        Vector3 dir = MoveDirection();
+        if (dir.sqrMagnitude < 0.01f) return;
 
-        Quaternion targetRotation = Quaternion.Euler(0f, transform.eulerAngles.y + rotation * 90f, 0f);
-        transform.rotation =
-            Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * p_RotationSpeed);
+        Quaternion target = Quaternion.LookRotation(dir, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, target,
+            Time.fixedDeltaTime * p_RotationSpeed);
     }
 
     public void Move(float p_Speed)
     {
-        float move = MoveDirection().z;
-        if (move <= 0f)
-        {
-            return;
-        }
-
-        rigidBody.linearVelocity = transform.forward * move * p_Speed;
+        Vector3 dir = Vector3.ClampMagnitude(MoveDirection(), 1f);
+        rigidBody.linearVelocity = dir * p_Speed;
     }
 
     public void ClampToFloor()
