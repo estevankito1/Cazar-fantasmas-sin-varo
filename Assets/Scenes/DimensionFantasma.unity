@@ -148,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da23420c4684ae43a918baf5e083323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefab: {fileID: 1578557386583753467, guid: 7e0c94c24a6b73743bfe9bdd157b267d, type: 3}
+  enemyPrefab: {fileID: 2753735416426497392, guid: af2a88ce8b8e55f45ae85ab70d217170, type: 3}
   player: {fileID: 371211200}
   spawnDistance: 12
   spawnInterval: 2
-  spawnHeightOffset: 1
+  spawnHeightOffset: 0
 --- !u!4 &72422646
 Transform:
   m_ObjectHideFlags: 0

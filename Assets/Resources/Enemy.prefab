@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2930526798069488102}
-  - component: {fileID: 8629425257436415892}
   - component: {fileID: 9152910071793333208}
   - component: {fileID: 3092693762750718713}
   - component: {fileID: 3881224540113067191}
+  - component: {fileID: 500417934787056416}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -35,14 +35,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8629425257436415892
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578557386583753467}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &9152910071793333208
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -128,3 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   speed: 3
+--- !u!33 &500417934787056416
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578557386583753467}
+  m_Mesh: {fileID: 0}
