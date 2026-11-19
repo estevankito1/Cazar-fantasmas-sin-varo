@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Grass.cs" />
     <Compile Include="Assets\Scripts\Pokemon\TestSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Scripts\Turn Base Combat\Core\NewHealthComponent.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Pokemon\PokemonMove.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Pokemon\PokemonInformation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Turn Base Combat\Core\NewCombatManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
