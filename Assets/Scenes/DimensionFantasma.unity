@@ -618,6 +618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FemaleCharacterPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 4548966441327965011, guid: 85e8afca0b855e24e8f4b984b9f620dd, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7377704322285507445, guid: 85e8afca0b855e24e8f4b984b9f620dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.899502
