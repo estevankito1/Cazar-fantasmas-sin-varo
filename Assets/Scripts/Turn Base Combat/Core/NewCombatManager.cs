@@ -4,6 +4,7 @@ public class NewCombatManager : MonoBehaviour
 {
     public enum CombatState
     {
+        WaitingForDoll,
         PlayerTurn,
         EnemyTurn,
         Victory,
@@ -17,12 +18,24 @@ public class NewCombatManager : MonoBehaviour
     public NewHealthComponent player;
     public NewHealthComponent enemy;
 
-    private void Start()
+
+    public void StartCombat()
     {
+        if (currentState != CombatState.WaitingForDoll)
+            return;
+
         currentState = CombatState.PlayerTurn;
 
+        Debug.Log("¡La muñeca ha desbloqueado el combate!");
         Debug.Log("¡Comienza el combate!");
         Debug.Log("Turno del jugador.");
+    }
+
+    private void Start()
+    {
+        currentState = CombatState.WaitingForDoll;
+
+        Debug.Log("Esperando a que encuentres la muñeca...");
     }
 
     public void EndPlayerTurn()
